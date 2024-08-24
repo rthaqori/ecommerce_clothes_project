@@ -90,7 +90,7 @@ const Header = () => {
             <a href="">
               <SearchOutlinedIcon className="hover:text-hover-color" />
             </a>
-            <Link to="/profile">
+            <Link to="/login">
               <PersonOutlineOutlinedIcon className="hover:text-hover-color" />
             </Link>
             <Link to="/wishList" className="relative">
