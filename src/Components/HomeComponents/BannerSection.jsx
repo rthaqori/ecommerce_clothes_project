@@ -39,7 +39,7 @@ const BannerSection = () => {
 
   return (
     <section className="bg-banner-bg">
-      <div className="relative ml-4 grid h-screen pl-4 md:mx-8 md:grid-cols-2 md:px-4">
+      <div className="relative z-[2] ml-4 grid h-screen pl-4 md:mx-8 md:grid-cols-2 md:px-4">
         <div className="z-[1] flex flex-col gap-5 py-24 md:gap-0 md:py-16">
           <Animate
             key={`animate-${animateKey}-1`}

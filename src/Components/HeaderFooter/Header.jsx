@@ -56,13 +56,13 @@ const Header = () => {
 
   return (
     <Headroom
-      className="z-999"
+      className="relative z-999"
       style={{
-        backgroundColor: scrolling ? "white" : "transparent",
+        backgroundColor: scrolling ? "white" : "",
         boxShadow: scrolling ? "0px 4px 6px rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
-      <header className="w-full bg-transparent py-2">
+      <header className="w-full py-2">
         <div className="flex h-15 items-center justify-start px-4 md:mx-6 lg:mx-8">
           <div className="mr-6 pr-7 font-bold">
             <span className="text-2xl md:text-3xl lg:text-4xl">rthaqori</span>
@@ -70,11 +70,11 @@ const Header = () => {
           <div>
             <ul className="flex items-center text-base-1 md:h-fit">
               <div
-                className={`absolute top-0 z-[9999] flex h-full w-full items-center bg-white md:static md:bg-transparent ${isOpen ? "right-0" : "-right-full"} h-screen`}
+                className={`absolute top-0 z-[9999] flex h-full w-full flex-col items-start bg-white p-5 text-2xl transition-all duration-200 ease-in-out md:static md:flex-row md:items-center md:bg-transparent md:p-0 md:text-base-1 ${isOpen ? "right-0" : "-right-full"} h-screen`}
               >
-                <div className="md:hidden">
+                <div className="flex w-full items-center justify-end pr-5 md:hidden">
                   <button onClick={toggleMenu}>
-                    <CloseIcon />
+                    <CloseIcon fontSize="large" />
                   </button>
                 </div>
                 <li className="cursor-pointer px-3 py-5 hover:text-hover-color">
