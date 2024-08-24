@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
 
   const handleScroll = () => {
-    setScrolling(window.scrollY > 20);
+    setScrolling(window.scrollY > 200);
   };
 
   useEffect(() => {
