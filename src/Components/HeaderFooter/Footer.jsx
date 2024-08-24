@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className="bg-black pt-10 text-white">
       <div className="col-span-2 p-4">
-        <div className="grid grid-cols-12 px-4 pb-15">
+        <div className="grid px-4 pb-15 md:grid-cols-12">
           <div className="col-span-4 p-4">
             <h3 className="mb-6 text-base-2 font-medium tracking-wider">
               ABOUT US
@@ -90,15 +90,15 @@ const Footer = () => {
           </div>
         </div>
         <hr className="border- border-gray-300" />
-        <div className="grid grid-cols-2 py-5">
-          <div className="start-center flex items-center p-4">
+        <div className="grid py-5 md:grid-cols-2">
+          <div className="start-center flex items-center justify-center md:justify-start md:p-4">
             <p>
               &copy;2022{" "}
               <span className="text-base-1 font-semibold">rthaqori</span>. All
               rights reserved
             </p>
           </div>
-          <div className="flex items-center justify-end gap-3 p-4">
+          <div className="flex items-center justify-center gap-3 md:justify-end md:p-4">
             {paymentOptions}
           </div>
         </div>

@@ -39,8 +39,8 @@ const BannerSection = () => {
 
   return (
     <section className="bg-banner-bg">
-      <div className="relative mx-8 grid h-screen grid-cols-2 px-4">
-        <div className="py-16">
+      <div className="relative ml-4 grid h-screen pl-4 md:mx-8 md:grid-cols-2 md:px-4">
+        <div className="z-[1] flex flex-col gap-5 py-24 md:gap-0 md:py-16">
           <Animate
             key={`animate-${animateKey}-1`}
             transition={{ duration: 0.75, delay: 0.15 }}
@@ -99,7 +99,7 @@ const BannerSection = () => {
             ></a>
           </div>
         </div>
-        <div className="">
+        <div className="absolute left-0 top-0 md:relative">
           <Animate
             key={`animate-${animateKey}-5`}
             variants={{
@@ -109,7 +109,7 @@ const BannerSection = () => {
             transition={{ duration: 1 }}
           >
             <img
-              className="h-screen scale-125 object-cover"
+              className="h-screen object-cover object-left lg:scale-125"
               src={visible ? PosterOne : PosterTwo}
               alt=""
             />

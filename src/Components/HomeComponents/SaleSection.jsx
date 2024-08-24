@@ -45,17 +45,17 @@ const SaleSection = () => {
   }, []);
 
   return (
-    <section className="h-[550px] w-full bg-banner-bg px-8">
-      <div className="grid h-full grid-cols-2 px-12">
+    <section className="h-[750px] w-full bg-banner-bg lg:h-[550px] lg:px-8">
+      <div className="grid h-full divide-y-4 divide-white md:divide-y-0 lg:grid-cols-2 lg:px-12">
         <div className="overflow-hidden p-4">
           <img className="object-cover" src={SaleImg} alt="" />
         </div>
-        <div className="flex h-full flex-col justify-center p-4">
+        <div className="flex h-full flex-col items-center justify-center px-4 py-8 md:items-start md:py-4">
           <div className="mb-5">
-            <h2 className="mb-4 text-base-2 font-semibold uppercase text-red-600">
+            <h2 className="mb-4 text-center text-base-2 font-semibold uppercase text-red-600 md:text-start">
               Sale up to 60%
             </h2>
-            <h1 className="mb-2 text-h2 font-semibold">
+            <h1 className="mb-2 text-center text-h2 font-semibold md:text-start">
               Blue classic long sleeves shirt
             </h1>
           </div>

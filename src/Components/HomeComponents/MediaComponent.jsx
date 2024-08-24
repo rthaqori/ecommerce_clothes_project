@@ -27,7 +27,7 @@ const MediaComponent = () => {
         <InstagramIcon />
         <p className="text-base-1 font-semibold">Follow Us on @ Insta</p>
       </div>
-      <div className="grid grid-cols-5 gap-4 p-4">{imgList}</div>
+      <div className="grid gap-4 p-4 md:grid-cols-5">{imgList}</div>
     </section>
   );
 };

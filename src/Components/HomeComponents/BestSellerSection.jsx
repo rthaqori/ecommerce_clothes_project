@@ -102,11 +102,13 @@ const BestSellerSection = () => {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="flex">
         {isLoading ? (
           <p>Loading products...</p>
         ) : (
-          <ul className="grid grid-cols-4 gap-4">{displayProducts}</ul>
+          <ul className="mx-auto grid gap-4 lg:grid-cols-4">
+            {displayProducts}
+          </ul>
         )}
       </div>
       <div className="mt-4 flex h-12 items-center justify-center">

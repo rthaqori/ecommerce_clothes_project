@@ -16,11 +16,11 @@ const Home = () => {
         </div>
         <BannerSection />
       </div>
-      <div className="mx-8 px-4 pb-15">
+      <div className="mx-4 px-2 pb-15 md:mx-6 md:px-3 lg:mx-8 lg:px-4">
         <ShopSection />
         <BestSellerSection />
       </div>
-      <div className="flex h-screen items-center justify-center">
+      <div className="flex items-center justify-center md:h-screen">
         <SaleSection />
       </div>
       <div>

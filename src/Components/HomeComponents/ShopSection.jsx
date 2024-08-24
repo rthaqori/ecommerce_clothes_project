@@ -57,8 +57,10 @@ const ShopSection = () => {
   return (
     <section className="pt-15">
       <div className="relative py-4">
-        <h2 className="mb-5 pb-4 text-h2 font-semibold">Shop by Categories</h2>
-        <div className="absolute right-8 top-4 flex gap-3">
+        <h2 className="mb-5 pb-4 text-2xl font-semibold md:text-3xl lg:text-h2">
+          Shop by Categories
+        </h2>
+        <div className="absolute right-0 top-4 flex scale-75 gap-3 lg:right-8">
           <button
             className="h-10 w-10 rounded-full border border-black11 transition-all duration-300 ease-in hover:border-none hover:bg-hover-color"
             onClick={slideLeft}
