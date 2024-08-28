@@ -63,18 +63,20 @@ const Cart = () => {
   return (
     <>
       <Header />
-      <div className="px-12 py-10">
-        <div className="flex">
-          <div className="w-3/5">
-            <div className="px-4">
-              <div className="flex w-full items-center justify-between border-b border-gray-500 px-8 pb-6">
-                <span className="text-3xl font-medium">Your Cart</span>
+      <div className="px-5 py-10 md:px-8 lg:px-12">
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-3/5">
+            <div className="md:px-4">
+              <div className="flex w-full items-center justify-between border-b border-gray-500 pb-2 md:px-6 md:pb-4 lg:px-8 lg:pb-6">
+                <span className="text-2xl font-medium md:text-3xl">
+                  Your Cart
+                </span>
                 <p className="text-base-5 font-medium text-gray-700">
                   <span className="text-gray-800">{totalItems}</span> items
                 </p>
               </div>
             </div>
-            <div className="px-4">
+            <div className="md:px-4">
               {totalItems === 0 ? (
                 <div className="mt-10 flex h-full w-full items-center justify-center text-3xl">
                   <span>Cart is empty.</span>
@@ -84,9 +86,11 @@ const Cart = () => {
               )}
             </div>
           </div>
-          <div className="w-2/5 pl-11 pr-4">
+          <div className="mt-5 w-full md:mt-0 md:w-2/5 md:pl-9 md:pr-4 lg:pl-11">
             <div className="mb-6">
-              <span className="text-3xl font-medium">Order Summary</span>
+              <span className="text-2xl font-medium md:text-3xl">
+                Order Summary
+              </span>
             </div>
             <div className="rounded border border-gray-400 bg-gray-200 p-8">
               <div className="flex justify-between border-b border-gray-500 pb-5 text-2xl font-medium">

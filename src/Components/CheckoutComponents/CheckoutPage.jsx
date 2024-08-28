@@ -73,7 +73,7 @@ const CheckoutPage = () => {
   return (
     <>
       <Header />
-      <div className="my-10 px-12">
+      <div className="my-4 px-2 md:my-10 md:px-12">
         <div className="mx-auto my-4 w-full md:my-6">
           <div className="overflow-hidden rounded-xl shadow">
             <div className="grid grid-cols-1 md:grid-cols-2">

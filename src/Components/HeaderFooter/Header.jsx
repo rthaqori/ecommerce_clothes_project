@@ -67,42 +67,34 @@ const Header = () => {
           <div className="mr-6 pr-7 font-bold">
             <span className="text-2xl md:text-3xl lg:text-4xl">rthaqori</span>
           </div>
-          <div>
-            <ul className="flex items-center text-base-1 md:h-fit">
-              <div
-                className={`absolute top-0 z-[9999] flex h-full w-full flex-col items-start bg-white p-5 text-2xl transition-all duration-200 ease-in-out md:static md:flex-row md:items-center md:bg-transparent md:p-0 md:text-base-1 ${isOpen ? "right-0" : "-right-full"} h-screen`}
-              >
-                <div className="flex w-full items-center justify-end pr-5 md:hidden">
-                  <button onClick={toggleMenu}>
-                    <CloseIcon fontSize="large" />
-                  </button>
-                </div>
-                <li className="cursor-pointer px-3 py-5 hover:text-hover-color">
-                  <Link to="/" className="underlineAnimation relative" href="">
-                    Home
-                  </Link>
-                </li>
-                <li className="cursor-pointer px-3 py-5 hover:text-hover-color">
-                  <Link
-                    to="/shop"
-                    className="underlineAnimation relative"
-                    href=""
-                  >
-                    Shop
-                  </Link>
-                </li>
-                <li className="cursor-pointer px-3 py-5 hover:text-hover-color">
-                  <Link className="underlineAnimation relative">Pages</Link>
-                </li>
-                <li className="cursor-pointer px-3 py-5 hover:text-hover-color">
-                  <Link className="underlineAnimation relative">Blog</Link>
-                </li>
-                <li className="cursor-pointer px-3 py-5 hover:text-hover-color">
-                  <Link className="underlineAnimation relative">Features</Link>
-                </li>
-              </div>
-            </ul>
-          </div>
+          <ul
+            className={`absolute top-0 z-[99999] flex h-screen w-screen flex-col items-start bg-white py-6 pl-5 text-2xl transition-all duration-200 ease-in-out md:static md:h-fit md:flex-row md:items-center md:bg-transparent md:py-0 md:pl-0 md:text-base-1 ${isOpen ? "right-0" : "-right-[120vw]"}`}
+          >
+            <div className="flex w-full items-center justify-end pr-5 md:hidden">
+              <button onClick={toggleMenu}>
+                <CloseIcon fontSize="large" />
+              </button>
+            </div>
+            <li className="cursor-pointer px-3 py-2 hover:text-hover-color md:py-4 lg:py-5">
+              <Link to="/" className="underlineAnimation relative" href="">
+                Home
+              </Link>
+            </li>
+            <li className="cursor-pointer px-3 py-2 hover:text-hover-color md:py-4 lg:py-5">
+              <Link to="/shop" className="underlineAnimation relative" href="">
+                Shop
+              </Link>
+            </li>
+            <li className="cursor-pointer px-3 py-2 hover:text-hover-color md:py-4 lg:py-5">
+              <Link className="underlineAnimation relative">Pages</Link>
+            </li>
+            <li className="cursor-pointer px-3 py-2 hover:text-hover-color md:py-4 lg:py-5">
+              <Link className="underlineAnimation relative">Blog</Link>
+            </li>
+            <li className="cursor-pointer px-3 py-2 hover:text-hover-color md:py-4 lg:py-5">
+              <Link className="underlineAnimation relative">Features</Link>
+            </li>
+          </ul>
           <div className="ml-auto flex items-center gap-5">
             <a href="">
               <SearchOutlinedIcon className="hover:text-hover-color" />

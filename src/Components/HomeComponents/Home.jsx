@@ -16,8 +16,10 @@ const Home = () => {
         </div>
         <BannerSection />
       </div>
-      <div className="mx-4 px-2 pb-15 md:mx-6 md:px-3 lg:mx-8 lg:px-4">
+      <div className="ml-4 mr-0 px-2 pr-0 md:mx-6 md:px-3 lg:mx-8 lg:px-4">
         <ShopSection />
+      </div>
+      <div className="mx-4 px-2 pb-15 md:mx-6 md:px-3 lg:mx-8 lg:px-4">
         <BestSellerSection />
       </div>
       <div className="flex items-center justify-center md:h-screen">

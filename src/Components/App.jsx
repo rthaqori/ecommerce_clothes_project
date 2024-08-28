@@ -15,29 +15,31 @@ import Users from "./DashboardComponents/Users";
 
 const App = () => {
   return (
-    <Router>
-      <AuthProvider>
-        <Routes>
-          <Route
-            path="/admin/products"
-            element={<PrivateRoute element={<Products />} />}
-          />
-          <Route
-            path="/admin/users"
-            element={<PrivateRoute element={<Users />} />}
-          />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/wishList" element={<WishList />} />
-          <Route path="/cartList" element={<Cart />} />
-          ``
-          <Route path="/checkout" element={<CheckoutPage />} />
-        </Routes>
-      </AuthProvider>
-    </Router>
+    <div className="w-screen overflow-x-clip">
+      <Router>
+        <AuthProvider>
+          <Routes>
+            <Route
+              path="/admin/products"
+              element={<PrivateRoute element={<Products />} />}
+            />
+            <Route
+              path="/admin/users"
+              element={<PrivateRoute element={<Users />} />}
+            />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/wishList" element={<WishList />} />
+            <Route path="/cartList" element={<Cart />} />
+            ``
+            <Route path="/checkout" element={<CheckoutPage />} />
+          </Routes>
+        </AuthProvider>
+      </Router>
+    </div>
   );
 };
 
