@@ -15,7 +15,7 @@ import Users from "./DashboardComponents/Users";
 
 const App = () => {
   return (
-    <div className="w-screen overflow-x-clip">
+    <div className="overflow-x-clip">
       <Router>
         <AuthProvider>
           <Routes>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ProductCard = (props) => {
   return (
     <li className="mb-8 h-fit w-fit">
-      <div className="group relative mb-5 h-itemCardImage w-itemCardImage cursor-pointer overflow-hidden bg-card-bg">
+      <div className="group relative mb-5 cursor-pointer overflow-hidden bg-card-bg md:h-itemCardImage md:w-itemCardImage">
         <Link to={`/product/${props.id}`}>
           <div className="group relative">
             <img
@@ -30,14 +30,14 @@ const ProductCard = (props) => {
             aria-label="Add to Cart"
             className="h-10 w-10 rounded-full bg-white"
           >
-            <SearchOutlinedIcon className="text-black" />
+            <SearchOutlinedIcon className="text-black transition-colors duration-300 ease-in-out hover:text-hover-color" />
           </button>
           <button
             onClick={props.handleAddToWishList}
             aria-label="Add to Wishlist"
             className="h-10 w-10 rounded-full bg-white"
           >
-            <FavoriteBorderOutlinedIcon className="text-black" />
+            <FavoriteBorderOutlinedIcon className="text-black transition-colors duration-300 ease-in-out hover:text-hover-color" />
           </button>
         </div>
         <button

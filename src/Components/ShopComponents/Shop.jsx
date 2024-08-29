@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import Header from "../HeaderFooter/Header";
 import Footer from "../HeaderFooter/Footer";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import TuneIcon from "@mui/icons-material/Tune";
 import ProductCard from "../CardsComponent/ProductCard";
 import Filter from "../../Functions/Filter";
 import {
@@ -12,6 +13,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 const Shop = () => {
+  const [filterOpen, setFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -97,15 +99,37 @@ const Shop = () => {
   return (
     <>
       <Header />
-      <div className="mx-8 my-4 grid grid-cols-4 gap-4">
-        <div className="col-span-1 w-full p-4">
-          <h3 className="mb-6 text-base-5 font-bold">Filter</h3>
-          <Filter setFilteredProducts={setFilteredProducts} />
+      <div className="mx-auto my-4 grid grid-cols-4 gap-4 md:mx-6 lg:mx-8">
+        <div className="col-span-4 md:col-span-1">
+          {/* Mobile Filter Toggle */}
+          <div className="px-4 md:hidden">
+            <button
+              onClick={() => {
+                setFilterOpen(!filterOpen);
+              }}
+              className={`flex items-center gap-1 text-base-5 font-bold ${filterOpen ? "mb-6" : ""}`}
+            >
+              <TuneIcon />
+              <p>Filter</p>
+            </button>
+            <div className={`overflow-clip ${filterOpen ? "h-fit" : "h-0"}`}>
+              <Filter setFilteredProducts={setFilteredProducts} />
+            </div>
+          </div>
+
+          {/* Always-visible Filter for larger screens */}
+          <div className="hidden md:block">
+            <p className="mb-6 flex items-center gap-1 text-base-5 font-bold">
+              <TuneIcon />
+              <p>Filter</p>
+            </p>
+            <Filter setFilteredProducts={setFilteredProducts} />
+          </div>
         </div>
-        <div className="col-span-3 p-4">
+        <div className="col-span-4 px-4 md:col-span-3 md:p-4">
           <div className="mb-5 flex items-center justify-between">
             <div>
-              <p className="text-lg text-gray-700">
+              <p className="text-gray-700 md:text-lg">
                 Showing{" "}
                 <strong className="text-black">
                   {indexOfFirstProduct + 1} -{" "}
@@ -118,7 +142,7 @@ const Shop = () => {
                 products
               </p>
             </div>
-            <div className="relative mr-4">
+            <div className="relative md:mr-4">
               <button
                 onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
                 className="flex items-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2"
@@ -149,7 +173,7 @@ const Shop = () => {
           </div>
           <div>
             {currentProducts.length > 0 ? (
-              <ul className="grid grid-cols-3 gap-4">
+              <ul className="grid grid-cols-2 gap-2 md:gap-4 lg:grid-cols-3 2xl:grid-cols-4">
                 {currentProducts.map((product) => (
                   <ProductCard
                     key={product.id}

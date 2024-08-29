@@ -13,7 +13,7 @@ import {
   handleAddToCart,
   handleBuyNow,
   handleAddToWishList,
-} from "../LocalStorage/LocalStorage"; // Adjust the path as necessary
+} from "../LocalStorage/LocalStorage";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -48,7 +48,7 @@ const ProductPage = () => {
       const product = data.find((p) => p.id === id);
       if (product && product.sizes.length > 0) {
         setSelectedSize(product.sizes[0]);
-        setImageUrl(product.mainImage); // Set initial image
+        setImageUrl(product.mainImage);
       }
     }
   }, [data, id]);
@@ -95,24 +95,24 @@ const ProductPage = () => {
   return (
     <>
       <Header />
-      <div className="mb-10 px-11 pt-10">
+      <div className="mb-10 px-4 pt-5 md:mb-10 md:px-11 md:pt-10">
         <div className="border-b border-gray-400 pb-10">
-          <div className="grid grid-cols-12">
-            <div className="col-span-6 grid h-[600px] grid-cols-12 overflow-clip px-4">
-              <div className="imgScroll col-span-3 flex h-full snap-y snap-mandatory flex-col gap-2 overflow-y-scroll p-2">
+          <div className="grid grid-cols-12 gap-4 md:gap-0">
+            <div className="col-span-12 grid grid-cols-12 overflow-clip px-4 md:col-span-6 md:h-[555px]">
+              <div className="imgScroll order-2 col-span-12 flex h-full snap-y snap-mandatory flex-row gap-2 overflow-x-scroll p-2 md:order-1 md:col-span-3 md:flex-col md:overflow-y-scroll">
                 {product.images.map((image, index) => (
                   <div key={index} className="w-full snap-start">
                     <img
                       onMouseEnter={() => handleImageUrl(image)}
                       loading="lazy"
-                      className="h-40 w-full object-contain"
+                      className="w-full object-contain lg:h-40"
                       src={image}
                       alt={`Product Image ${index + 1}`}
                     />
                   </div>
                 ))}
               </div>
-              <div className="col-span-9 h-full p-2">
+              <div className="order-1 col-span-12 h-full p-2 md:order-2 md:col-span-9">
                 <img
                   loading="lazy"
                   className="h-full w-full object-contain"
@@ -121,9 +121,11 @@ const ProductPage = () => {
                 />
               </div>
             </div>
-            <div className="col-span-6 px-4">
-              <div className="pl-4 pt-5">
-                <h2 className="mb-1 text-h2 font-medium">{product.name}</h2>
+            <div className="col-span-12 px-4 md:col-span-6">
+              <div className="pl-0 pt-5 md:pl-4">
+                <h2 className="mb-1 text-2xl font-medium md:text-3xl lg:text-h2">
+                  {product.name}
+                </h2>
                 <p className="mb-5 text-priceText font-medium">
                   ${product.price}
                 </p>
@@ -132,12 +134,12 @@ const ProductPage = () => {
                     <p className="mb-2 text-base text-gray-600">
                       Size: <span>{selectedSize}</span>
                     </p>
-                    <ul className="flex gap-3">
+                    <ul className="flex flex-wrap gap-2 md:gap-3">
                       {product.sizes.map((size, index) => (
                         <li
                           key={index}
                           onClick={() => handleSizeSelect(size)}
-                          className={`mr-2 flex h-12 w-12 cursor-pointer items-center justify-center rounded-sm border p-1 text-base font-medium uppercase ${
+                          className={`mr-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-sm border p-1 text-sm font-medium uppercase md:h-12 md:w-12 md:text-base ${
                             size === selectedSize
                               ? "border-hover-color text-hover-color"
                               : "border-gray-500"
@@ -151,16 +153,16 @@ const ProductPage = () => {
                   <div>
                     <p className="mb-2 text-base-4">Quantity</p>
                     <div className="flex gap-2">
-                      <div className="relative flex h-12 w-32 items-center justify-center border border-gray-300">
+                      <div className="relative flex h-10 w-28 items-center justify-center border border-gray-300 md:h-12 md:w-32">
                         <button
                           type="button"
                           onClick={decrementQuantity}
-                          className="absolute bottom-0 left-0 flex h-full w-10 items-center justify-center text-xl font-bold"
+                          className="absolute bottom-0 left-0 flex h-full w-8 items-center justify-center text-lg font-bold md:w-10 md:text-xl"
                         >
                           <RemoveIcon />
                         </button>
                         <input
-                          className="h-full w-full px-10 text-center text-base-4"
+                          className="h-full w-full px-8 text-center text-base-4 md:px-10"
                           type="number"
                           value={quantity}
                           readOnly
@@ -168,7 +170,7 @@ const ProductPage = () => {
                         <button
                           type="button"
                           onClick={incrementQuantity}
-                          className="absolute bottom-0 right-0 flex h-full w-10 items-center justify-center text-2xl"
+                          className="absolute bottom-0 right-0 flex h-full w-8 items-center justify-center text-xl md:w-10 md:text-2xl"
                         >
                           <AddIcon />
                         </button>
@@ -177,7 +179,7 @@ const ProductPage = () => {
                         type="button"
                         onClick={handleAddToCartClick}
                         disabled={loadingButton}
-                        className="h-12 w-fit rounded bg-black px-4 py-2 text-center text-white transition-opacity duration-150 hover:opacity-75"
+                        className="h-10 w-fit rounded bg-black px-4 py-2 text-center text-white transition-opacity duration-150 hover:opacity-75 md:h-12"
                       >
                         Add to Cart
                       </button>
@@ -185,14 +187,14 @@ const ProductPage = () => {
                         type="button"
                         onClick={handleBuyNowClick}
                         disabled={loadingButton}
-                        className="h-12 w-fit rounded bg-hover-color px-4 py-2 text-center text-white transition-opacity duration-150 hover:opacity-75"
+                        className="h-10 w-fit rounded bg-hover-color px-4 py-2 text-center text-white transition-opacity duration-150 hover:opacity-75 md:h-12"
                       >
                         Buy Now
                       </button>
                       <button
                         type="button"
                         onClick={() => handleAddToWishList(product)}
-                        className="flex h-12 w-auto items-center justify-center p-2"
+                        className="flex h-10 w-auto items-center justify-center p-2 md:h-12"
                       >
                         <FavoriteBorderIcon
                           fontSize="medium"
@@ -202,10 +204,10 @@ const ProductPage = () => {
                     </div>
                   </div>
                 </form>
-                <div className="mb-5 mt-2 flex h-15 items-center gap-10 rounded-md bg-gray-200 px-6 py-4">
+                <div className="mb-5 mt-2 flex h-15 items-center justify-between gap-10 rounded-md bg-gray-200 px-6 py-4">
                   <span className="">Secure checkout with</span>
                   <img
-                    className="h-full"
+                    className="h-5 md:h-full"
                     src="https://july.uxper.co/fashion01/wp-content/uploads/sites/2/2022/04/payment-logo_e0eb93d9-1f43-41d8-9810-09ed5b649156.webp"
                     alt="payments"
                   />
@@ -224,23 +226,27 @@ const ProductPage = () => {
                     Category:{" "}
                     <span>
                       {product.category.map((category, index) => (
-                        <span
-                          key={index}
-                          className="mr-2 font-medium uppercase"
-                        >
+                        <span key={index} className="text-hover-color">
                           {category}
+                          {index < product.category.length - 1 && ", "}
                         </span>
                       ))}
                     </span>
                   </p>
-                </div>
-                <div className="flex items-center gap-3 text-base-2">
-                  <p>Share</p>
-                  <div>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=yourproducturl">
-                      <FacebookOutlinedIcon fontSize="large" />
-                    </a>
+                  <div className="flex gap-3">
+                    <span>Share:</span>
+                    <FacebookOutlinedIcon
+                      fontSize="medium"
+                      className="hover:text-hover-color"
+                    />
                   </div>
+                </div>
+                <hr className="my-5 border border-gray-400" />
+                <div className="mb-6">
+                  <h4 className="mb-3 text-base-5">Description</h4>
+                  <p className="text-base-5 text-gray-800">
+                    {product.description}
+                  </p>
                 </div>
               </div>
             </div>
